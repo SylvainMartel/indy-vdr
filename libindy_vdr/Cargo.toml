@@ -21,10 +21,9 @@ crate-type = ["staticlib", "rlib", "cdylib"]
 [features]
 ffi = ["ffi-support", "logger"]
 logger = ["env_logger", "log"]
-zmq_vendored = ["zmq/vendored"]
 local_nodes_pool = []
 rich_schema = ["indy-data-types/rich_schema"]
-default = ["ffi", "log", "zmq_vendored"]
+default = ["ffi", "log"]
 
 [dependencies]
 # This is added so we can lock the version that zmq uses
@@ -59,7 +58,7 @@ sha3 = "0.10"
 thiserror = "1.0"
 time = { version = "=0.3.20", features = ["parsing"] }
 url = "2.2.2"
-zmq = "0.9"
+zmq = { git = "https://github.com/SylvainMartel/rust-zmq.git" }
 async-trait = "0.1.77"
 async-lock = "3.3.0"
 sled = "0.34.7"
